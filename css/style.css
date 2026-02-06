@@ -1,0 +1,137 @@
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #111;
+    --accent: #2563eb;
+    --muted: #6b7280;
+}
+
+body.dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --accent: #3b82f6;
+    --muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--muted);
+    background: transparent;
+    color: var(--text);
+}
+
+button {
+    background: var(--accent);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,.05);
+    margin-bottom: 8px;
+}
+
+li.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.todo-text {
+    cursor: text;
+}
+
+.todo-text:focus {
+    outline: 2px dashed var(--accent);
+}
+
+.date-input {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.actions .delete {
+    color: #000;
+    
+}.actions .delete:hover {
+    color: red;
+}
+
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 24px;
+}
+.date-input {
+    padding-right: 36px;
+    position: relative;
+}
+
+/* Date picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0);
+    cursor: pointer;
+}
+body.dark input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+.date-input {
+    position: relative;
+    width: 100%;
+    padding-right: 36px;
+}
